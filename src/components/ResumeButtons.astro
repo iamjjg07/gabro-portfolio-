@@ -1,1 +1,29 @@
+---
+// src/components/ResumeButtons.astro
+---
 
+<div class="flex flex-wrap gap-4">
+  <!-- View Resume -->
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium
+           bg-amber-600 text-white hover:bg-amber-500
+           transition-all duration-300 shadow-lg shadow-amber-900/20
+           hover:shadow-amber-700/30 hover:-translate-y-0.5"
+  >
+    View Resume
+  </a>
+
+  <!-- Download CV -->
+  <a
+    href="/resume.pdf"
+    download
+    class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium
+           border border-amber-600/50 text-amber-200 hover:bg-amber-600/10
+           transition-all duration-300 hover:-translate-y-0.5"
+  >
+    Download CV
+  </a>
+</div>
