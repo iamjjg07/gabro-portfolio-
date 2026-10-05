@@ -1,1 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
 
+<BaseLayout 
+  title="Gabro Joy Jimwea | Physics with Electronics & Web Developer"
+  description="Portfolio of Gabro Joy Jimwea – Physics with Electronics student learning web development (HTML & CSS). Based in Abuja, Nigeria."
+>
+  <Header />
+  <main>
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>
