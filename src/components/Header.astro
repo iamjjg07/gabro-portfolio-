@@ -1,5 +1,5 @@
 ---
-const links = [
+const navItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
@@ -7,28 +7,79 @@ const links = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0b0f]/80 backdrop-blur-md border-b border-white/5">
-  <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="/" class="font-medium tracking-tight text-stone-100 hover:text-amber-400 transition">
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    
+    <!-- Logo - Clicking this takes you back to the top -->
+    <a href="#" class="text-xl font-semibold tracking-tight text-amber-600 hover:text-amber-700 transition">
       Gabro Joy
     </a>
 
-    <nav class="hidden md:flex items-center gap-8">
-      {links.map(link => (
-        <a 
-          href={link.href} 
-          class="text-sm text-stone-400 hover:text-amber-400 transition"
-        >
-          {link.name}
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-8 text-sm font-medium">
+      {navItems.map((item) => (
+        <a href={item.href} class="hover:text-amber-600 transition-colors">
+          {item.name}
         </a>
       ))}
     </nav>
 
-    <!-- Mobile menu button (simple version) -->
-    <button id="menu-btn" class="md:hidden text-stone-300">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    <!-- Desktop Resume Button -->
+    <a 
+      href="/resume.pdf" 
+      target="_blank"
+      class="hidden md:inline-block text-sm font-medium px-4 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-800 transition"
+    >
+      Resume
+    </a>
+
+    <!-- Mobile Hamburger Button -->
+    <button 
+      id="menu-btn"
+      class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+      aria-label="Open menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
   </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+    <nav class="flex flex-col px-6 py-4 space-y-3">
+      {navItems.map((item) => (
+        <a 
+          href={item.href} 
+          class="py-2 text-gray-700 hover:text-amber-600 font-medium transition"
+        >
+          {item.name}
+        </a>
+      ))}
+      <a 
+        href="/resume.pdf" 
+        target="_blank"
+        class="mt-2 inline-block text-center py-2.5 rounded-full bg-amber-600 text-white font-medium"
+      >
+        View Resume
+      </a>
+    </nav>
+  </div>
 </header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when a link is clicked
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>
