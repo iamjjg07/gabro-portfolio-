@@ -2,31 +2,37 @@
 import ResumeButtons from './ResumeButtons.astro';
 ---
 
-<section id="contact" class="py-24 bg-white/[0.02]">
+<section id="contact" class="py-24 bg-background-soft">
   <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-sm font-medium tracking-widest text-amber-500 uppercase mb-4">
+    <h2 class="text-sm font-medium tracking-widest text-accent uppercase mb-4">
       Contact
     </h2>
-    <h3 class="font-serif text-3xl md:text-4xl text-stone-100 mb-6">
+    <h3 class="font-serif text-3xl md:text-4xl text-foreground mb-6">
       Let’s connect
     </h3>
-    <p class="text-stone-400 max-w-xl mb-10">
-      Open to opportunities in electronics, applied physics, and technical roles. Feel free to reach out.
+    <p class="text-foreground-muted max-w-xl mb-10">
+      Feel free to reach out for collaborations or just to say hello.
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-8 mb-12">
-      <div>
-        <p class="text-sm text-stone-500 mb-1">Phone</p>
-        <a href="tel:+2349021360941" class="text-stone-200 hover:text-amber-400 transition">
-          0902 136 0941
+    <div class="space-y-4 mb-10 text-foreground-muted">
+      <p>
+        <span class="text-foreground-subtle text-sm">Phone:</span><br />
+        <a href="tel:+2349021360941" class="hover:text-accent transition">0902 136 0941</a>
+      </p>
+      <p>
+        <span class="text-foreground-subtle text-sm">Email:</span><br />
+        <a href="mailto:gabrojoy@gmail.com" class="hover:text-accent transition">gabrojoy@gmail.com</a>
+      </p>
+      <p>
+        <span class="text-foreground-subtle text-sm">Location:</span><br />
+        Abuja, Nigeria
+      </p>
+      <p>
+        <span class="text-foreground-subtle text-sm">GitHub:</span><br />
+        <a href="https://github.com/iamjjg07" target="_blank" class="hover:text-accent transition">
+          github.com/iamjjg07
         </a>
-      </div>
-      <div>
-        <p class="text-sm text-stone-500 mb-1">Email</p>
-        <a href="mailto:your.email@example.com" class="text-stone-200 hover:text-amber-400 transition">
-          gabrojoy@gmail.com
-        </a>
-      </div>
+      </p>
     </div>
 
     <ResumeButtons />
