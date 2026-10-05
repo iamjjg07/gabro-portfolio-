@@ -2,7 +2,7 @@
 
 Personal portfolio website of **Gabro Joy Jimwea**, a Physics with Electronics student currently learning web development.
 
-**Live Site:** [Add your live link here after deploying]
+**Live Site:** [https://iamjjg07.github.io/gabro-portfolio-/]
 
 ---
 
