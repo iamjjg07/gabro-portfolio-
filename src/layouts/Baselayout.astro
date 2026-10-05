@@ -1,1 +1,45 @@
+---
+// src/layouts/BaseLayout.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Gabro Joy Jimwea | Physics with Electronics & Web Developer",
+  description = "Portfolio of Gabro Joy Jimwea – Physics with Electronics student learning web development (HTML & CSS). Based in Abuja, Nigeria."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <title>{title}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  
+  <body class="bg-gray-50 text-gray-900 antialiased">
+    <Header />
+    
+    <main>
+      <slot />  <!-- This is where the content of index.astro will be inserted -->
+    </main>
+    
+    <Footer />
+  </body>
+</html>
