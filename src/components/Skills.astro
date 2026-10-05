@@ -1,1 +1,43 @@
+---
+const skillGroups = [
+  {
+    title: "Core Physics",
+    items: ["Classical Mechanics", "Electromagnetism", "Optics", "Thermodynamics", "Modern Physics"]
+  },
+  {
+    title: "Electronics",
+    items: ["Analog Circuits", "Digital Electronics", "PCB Design", "Microcontrollers", "Signal Processing"]
+  },
+  {
+    title: "Tools & Software",
+    items: ["Arduino / ESP32", "Multisim / Proteus", "MATLAB", "Python", "Oscilloscope & Instrumentation"]
+  }
+];
+---
 
+<section id="skills" class="py-24 bg-white/[0.02]">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-sm font-medium tracking-widest text-amber-500 uppercase mb-4">
+      Expertise
+    </h2>
+    <h3 class="font-serif text-3xl md:text-4xl text-stone-100 mb-12">
+      Technical Skills
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {skillGroups.map(group => (
+        <div class="p-6 rounded-xl border border-white/5 bg-white/[0.02]">
+          <h4 class="text-amber-400/90 font-medium mb-4">{group.title}</h4>
+          <ul class="space-y-2">
+            {group.items.map(item => (
+              <li class="text-stone-400 text-sm flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500/60"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
